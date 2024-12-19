@@ -60,3 +60,15 @@ A heatmap revealed the strongest correlations between features. For example, **t
    ```bash
    git clone https://github.com/yourusername/machine-failure-prediction.git
    cd machine-failure-prediction
+Install the required dependencies:
+
+bash
+Copy code
+pip install pandas scikit-learn matplotlib seaborn
+Place the dataset (ai4i2020.csv) in the project directory.
+
+Run the script:
+
+bash
+Copy code
+python machine_failure_prediction.py
