@@ -1,7 +1,8 @@
+
 # 🎢 Machine Failure Prediction System
 
 ## Overview
-This project is about detecting machine failures before they break down. Using the power of Support Vector Machines (SVM) and a dataset filled with operational data, I built a highly accurate system to predict machine failure.
+This project is about detecting machine failures before they break down. Using the power of Support Vector Machines (SVM) and a dataset filled with operational data, I built a highly accurate system to predict machine failure. 
 
 ---
 
@@ -14,7 +15,7 @@ The dataset (`ai4i2020.csv`) contains 10,000 operational records, each packed wi
 - **OSF**: Overstrain Failure  
 - **RNF**: Random Failure  
 
-### Key Stats:
+### Key Stats
 - **Total Records**: 10,000  
 - **Failures Detected**: 339  
 - **Non-Failures**: 9,661  
@@ -27,22 +28,22 @@ The dataset (`ai4i2020.csv`) contains 10,000 operational records, each packed wi
 
 ## Pipeline
 
-### 1. Preprocessing
-- **One-Hot Encoding**: Converted `Type` (L/M) into numerical values.  
-- **Scaling**: Normalized all features to ensure fair treatment.  
-- **Train-Test Split**: Split the dataset into 80% training and 20% testing data.  
+1. **Preprocessing**  
+   - **One-Hot Encoding**: Converted `Type` (L/M) into numerical values.  
+   - **Scaling**: Normalized all features to ensure fair treatment.  
+   - **Train-Test Split**: Split the dataset into 80% training and 20% testing data.  
 
-### 2. Model Training
-- **Algorithm**: Support Vector Machine with an RBF kernel.  
-- **Goal**: Detect machine failures with high accuracy and reliability.  
+2. **Model Training**  
+   - **Algorithm**: Support Vector Machine with an RBF kernel.  
+   - **Goal**: Detect machine failures with high accuracy and reliability.  
 
-### 3. Evaluation
-- **Accuracy**: 99.9%  
-- **Precision, Recall, and F1-Score**: Exceptional performance across all metrics.  
-- Caught almost every failure while leaving non-failures untouched.  
+3. **Evaluation**  
+   - **Accuracy**: 99.9%  
+   - **Precision, Recall, and F1-Score**: Exceptional performance across all metrics.  
+   - Caught almost every failure while leaving non-failures untouched.  
 
-### 4. Visualization
-A heatmap revealed the strongest correlations between features. For example, **tool wear** and **torque** play key roles in predicting failures.
+4. **Visualization**  
+   A heatmap revealed the strongest correlations between features. For example, **tool wear** and **torque** play key roles in predicting failures.
 
 ---
 
@@ -56,18 +57,19 @@ A heatmap revealed the strongest correlations between features. For example, **t
 
 ## How to Run
 
-1. **Clone this repository**:
-   ```bash
-   git clone https://github.com/yourusername/machine-failure-prediction.git
-   cd machine-failure-prediction
-Install the required dependencies:
-
 ```bash
+git clone https://github.com/yourusername/machine-failure-prediction.git
+cd machine-failure-prediction
+
 pip install pandas scikit-learn matplotlib seaborn
-Place the dataset (ai4i2020.csv) in the project directory.
 
-Run the script:
-
-```bash
-Copy code
 python machine_failure_prediction.py
+```
+
+---
+
+## Future Plans
+
+- Experiment with other algorithms like Random Forest and Neural Networks.  
+- Deploy the system for real-time factory monitoring.  
+- Add more insightful visualizations.  
