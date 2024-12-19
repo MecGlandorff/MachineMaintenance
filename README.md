@@ -72,4 +72,9 @@ python machine_failure_prediction.py
 
 - Experiment with other algorithms like Random Forest and Neural Networks.  
 - Deploy the system for real-time factory monitoring.  
-- Add more insightful visualizations.  
+- Add more insightful visualizations.
+
+# DATA & CREDITS
+Data doesn't belong to me so thanks to UC IRVINE: 
+https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset
+This dataset is licensed under a Creative Commons Attribution 4.0 International (CC BY 4.0) license.
