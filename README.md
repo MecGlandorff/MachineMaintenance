@@ -70,7 +70,7 @@ python machine_failure_prediction.py
 
 ## Future Plans
 
-- Experiment with other algorithms like Random Forest and Neural Networks.  
+- Experiment with other models like Random Forest and Neural Networks.  
 - Deploy the system for real-time factory monitoring.  
 - Add more insightful visualizations.
 
