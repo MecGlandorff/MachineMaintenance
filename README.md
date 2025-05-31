@@ -2,7 +2,7 @@
 # 🎢 Machine Failure Prediction System
 
 ## Overview
-This project is about detecting machine failures before they break down. Using the power of Support Vector Machines (SVM) and a dataset filled with operational data, I built a highly accurate system to predict machine failure. 
+This project is about detecting machine failures before they break down. Using the power of Support Vector Machines (SVM) and a dataset filled with operational data, I built an accurate system to predict machine failure. 
 
 ---
 
