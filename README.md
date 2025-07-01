@@ -42,12 +42,6 @@ The dataset (`ai4i2020.csv`) contains 10,000 operational records, each packed wi
    - **Precision, Recall, and F1-Score**: Exceptional performance across all metrics.  
    - Caught almost every failure while leaving non-failures untouched.
    - Accuracy: 0.999
-precision	recall	f1-score	support
-0	0.998970	1.000000	0.999485	1939.000
-1	1.000000	0.967213	0.983333	61.000
-accuracy	0.999000	0.999000	0.999000	0.999
-macro avg	0.999485	0.983607	0.991409	2000.000
-weighted avg	0.999001	0.999000	0.998992	2000.000
 Summary of Dataset:
 Total measurements: 10000
 Total failures: 339
