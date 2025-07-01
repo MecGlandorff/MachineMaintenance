@@ -1,68 +1,76 @@
-
 # 🎢 Machine Failure Prediction System
 
-## Overview
-This project is about detecting machine failures before they break down. Using the power of Support Vector Machines (SVM) and a dataset filled with operational data, I built an accurate system to predict machine failure. 
+This small project explores whether Support Vector Machines (SVM) can learn from historical machine behaviour and help prevent failures before they happen.
 
 ---
 
 ## The Dataset
-The dataset (`ai4i2020.csv`) contains 10,000 operational records, each packed with details like temperatures, torque, speed, and tool wear. It also includes failure classifications across five categories:
 
-- **TWF**: Tool Wear Failure  
-- **HDF**: Heat Dissipation Failure  
-- **PWF**: Power Failure  
-- **OSF**: Overstrain Failure  
-- **RNF**: Random Failure  
+The dataset (`ai4i2020.csv`) contains 10,000 records from machines operating under various conditions. Each row includes:
 
-### Key Stats
-- **Total Records**: 10,000  
-- **Failures Detected**: 339  
-- **Non-Failures**: 9,661  
-- **Machine Types**:  
-  - Type L: 6,000  
-  - Type M: 2,997  
-  - 3 unclassified mystery-machines (called in sick for work or something).  
+- Sensor data: air temperature, process temperature  
+- Machine performance: torque, rotational speed, tool wear  
+- Machine type: L or M  
+- Failure labels:  
+  - TWF (Tool Wear Failure)  
+  - HDF (Heat Dissipation Failure)  
+  - PWF (Power Failure)  
+  - OSF (Overstrain Failure)  
+  - RNF (Random Failure)  
+
+### Summary:
+
+- Total records: 10,000  
+- Failures: 339  
+- Non-failures: 9,661  
+- Type L machines: 6,000  
+- Type M machines: 2,997  
+- 3 machines with no type recorded (they didn’t say)  
 
 ---
 
-## Pipeline
+## Approach
 
 1. **Preprocessing**  
-   - **One-Hot Encoding**: Converted `Type` (L/M) into numerical values.  
-   - **Scaling**: Normalized all features to ensure fair treatment.  
-   - **Train-Test Split**: Split the dataset into 80% training and 20% testing data.  
+   - One-hot encoded machine types  
+   - Scaled features to similar ranges  
+   - Split data 80/20 into train/test  
 
-2. **Model Training**  
-   - **Algorithm**: Support Vector Machine with an RBF kernel.  
-   - **Goal**: Detect machine failures with high accuracy and reliability.  
+2. **Model**  
+   - Support Vector Machine with RBF kernel  
+   - Trained to distinguish failure vs. non-failure  
 
 3. **Evaluation**  
-   - **Accuracy**: 99.9%  
-   - **Precision, Recall, and F1-Score**: Exceptional performance across all metrics.  
-   - Caught almost every failure while leaving non-failures untouched.
-   - Accuracy: 0.999
-Summary of Dataset:
-Total measurements: 10000
-Total failures: 339
-Total non-failures: 9661
-Total Type L: 6000
-Total Type M: 2997
-
-4. **Visualization**  
-   A heatmap revealed the strongest correlations between features. For example, **tool wear** and **torque** play key roles in predicting failures.
+   - Accuracy: 99.9%  
+   - Catches almost every failure without false alarms  
 
 ---
 
 ## Results
 
-- **Failures Detected**: ✔️  
-- **Innocent Machines Left Untouched**: ✔️  
-- **Factory Chaos Avoided**: ✔️  
+The model performed well on the test set:
+
+| Class             | Precision | Recall | F1-Score | Amount  |
+|------------------:|----------:|-------:|---------:|--------:|
+| Non-Failure (0)   | 0.999     | 1.000  | 0.999    | 1939    |
+| Failure (1)       | 1.000     | 0.967  | 0.983    | 61      |
+
+- **Accuracy**: 0.999  
+- **Macro Avg F1-Score**: 0.991  
+- **Weighted Avg F1-Score**: 0.999  
+
+Translation: the model correctly identified almost all failures, and didn’t flag healthy machines by mistake.
 
 ---
 
-## How to Run
+## Observations
+
+- Tool wear and torque showed the strongest correlation with failure  
+- Failures are relatively rare (~3.4% of data), but the model handled the imbalance well
+
+---
+
+## To Run
 
 ```bash
 git clone https://github.com/yourusername/machine-failure-prediction.git
@@ -71,9 +79,7 @@ cd machine-failure-prediction
 pip install pandas scikit-learn matplotlib seaborn
 
 python machine_failure_prediction.py
-```
 
----
 
 ## Future Plans
 
