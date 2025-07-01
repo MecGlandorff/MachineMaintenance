@@ -70,16 +70,6 @@ Translation: the model correctly identified almost all failures, and didn’t fl
 
 ---
 
-## To Run
-
-```bash
-git clone https://github.com/yourusername/machine-failure-prediction.git
-cd machine-failure-prediction
-
-pip install pandas scikit-learn matplotlib seaborn
-
-python machine_failure_prediction.py
-
 
 ## Future Plans
 
